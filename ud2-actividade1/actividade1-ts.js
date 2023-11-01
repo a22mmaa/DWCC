@@ -20,5 +20,5 @@ if (n2 % 2 === 0) {
     console.log("É enteiro");
 }
 else {
-    console.log("Nop");
+    console.log("Non é enteiro");
 }

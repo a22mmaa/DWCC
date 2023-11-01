@@ -1,33 +1,23 @@
-let idade1 :string = prompt('Cantos anos tes?');
-let idade2 :number = parseInt(idade1);
+let idade :number = parseInt(prompt('Cantos anos tes?'));
 
-if (idade2 >= 0 && idade2 <= 12) {
-    console.log("neno")
-} else {
-    if (idade2 >= 13 && idade2 <= 18) {
-        console.log("adolescente")
-    } else {
-        if (idade2 >= 19 && idade2 <= 30) {
-            console.log("xoven")
-        } else {
-            if (idade2 >= 31 && idade2 <= 64) {
-                console.log("adulto")
-            } else {
-                if (idade2 >= 65 && idade2 <= 100) {
-                    console.log("xubilado")
-                } else {
-                    console.log("erro")
-                }
-            }
-        }
-    }
+switch (true) {
+    case (idade >= 0 && idade <= 12):
+        document.write("neno");
+        break;
+    case (idade >= 13 && idade <= 18):
+        document.write("adolescente");
+        break;
+    case (idade >= 19 && idade <= 30):
+        document.write("xoven");
+        break;
+    case (idade >= 31 && idade <= 64):
+        document.write("adulto");
+        break;
+    case (idade >= 65 && idade <= 100):
+        document.write("xubilado");
+        break;
+    default:
+        document.write("erro");
+        break;
 }
 
-switch (idade2) {
-    case (0-12): console.log("neno"); break;
-    case (13-18): console.log("adolescente"); break;
-    case (19-30): console.log("xoven"); break;
-    case (31-64): console.log("adulto"); break;
-    case (65-100): console.log("xubilado"); break;
-    default: console.log("erro");break;
-}
