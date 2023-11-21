@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Unidade 3 - Exercicio 1 - Xanela de orixe</title>
+        <script type="text/javascript">
+            let subXanela;
+
+            function abrirXanela() {
+                subXanela = window.open(
+                    'exercicio11-xanela.html',
+                    'subXanela',
+                    'height=300, width=300, toolbar=no,menubar=no,left=400,top=400'
+                );
+                subXanela.focus();
+            }
+
+            function fecharXanela() {
+                if (!subXanela.closed) {
+                    subXanela.close();
+                } else {
+                    alert('A xanela xa está fechada!');
+                }
+            }
+
+            function moverXanelaRelativo() {
+                subXanela.moveBy(200, 200);
+                subXanela.focus();
+            }
+
+            function moverXanelaPosicion() {
+                subXanela.moveTo(400, 200);
+                subXanela.focus();
+            }
+
+            function aumentarTamañoXanela() {
+                subXanela.resizeBy(50, 50);
+                subXanela.focus();
+            }
+
+            function redimensionarXanela() {
+                subXanela.resizeTo(500, 500);
+                subXanela.focus();
+            }
+
+            /*
+            ENUNCIADO:
+            "En todo momento que a ventá emerxente estea aberta, que 
+            permaneza visible, é dicir, cando pulsamos en algún botón da 
+            ventá principal ou xeradora que non desapareza a ventá emerxente"
+            */
+
+            /*
+            RESPOSTA:
+            Entendo que se debe facer con focus(), pero isto está deprecated
+            na maioría dos navegadores. De feito, se uso, non se abre o popup.
+            Comento o código que usaría:
+            */
+
+            // if (!subXanela.closed) {
+            //     subXanela.focus();
+            // }
+
+            // o
+
+            // if (subXanela) {
+            //     subXanela.focus();
+            // }
+
+            let permiso = prompt(
+                'Queres abrir unha nova xanela? (S: Si / N: Non)'
+            );
+
+            if (permiso == 'S' || permiso == 's') {
+                abrirXanela();
+            } else {
+                document.write('Non diches permiso :(');
+            }
+        </script>
+    </head>
+    <body>
+        <p><input type="button" onclick="fecharXanela()" value="Fechar" /></p>
+        <p><input
+            type="button"
+            onclick="moverXanelaRelativo()"
+            value="Mover 200px"
+        /></p>
+        <p><input
+            type="button"
+            onclick="moverXanelaPosicion()"
+            value="Mover a 400,200"
+        /></p>
+        <p><input
+            type="button"
+            onclick="aumentarTamañoXanela()"
+            value="Aumentar tamaño 50px"
+        /></p>
+        <p><input
+            type="button"
+            onclick="redimensionarXanela()"
+            value="Redimensionar a 400x400px"
+        /></p>
+    </body>
+</html>
