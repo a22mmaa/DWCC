@@ -1,0 +1,25 @@
+<html>
+    <script>
+        let aniversa = '22/04/1992';
+        //let aniversa = prompt("Introduce o aniversario en formato DD/MM/YYYY");
+        let [dia, mes, ano] = aniversa.split('/');
+
+        let diaAnivers = dia;
+        let mesAnivers = mes - 1;
+        let anoAnivers = ano;
+        let arrayAnos = [];
+
+        for (anoFuturo = 2023; anoFuturo < 2101; anoFuturo++) {
+            let dataFutura = new Date(anoFuturo, mesAnivers, anoAnivers);
+            let diaSemana = dataFutura.getDay();
+
+            if (diaSemana == 0 || diaSemana == 6) {
+                arrayAnos.push(anoFuturo);
+            }
+        }
+
+        for (let ano of arrayAnos) {
+            document.write(ano);
+        }
+    </script>
+</html>

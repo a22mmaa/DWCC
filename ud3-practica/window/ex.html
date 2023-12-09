@@ -1,0 +1,30 @@
+<html>
+    <script>
+        let permisoo = prompt('Queres abrir unha nova xanela? (S/N)');
+        let subXanel;
+
+        function abrirXanel() {
+            document.write('okay');
+            subXanel = window.open(
+                '2.html',
+                'subXanel',
+                'height=300, width=300, toolbar=no,menubar=no,left=400,top=400'
+            );
+        }
+
+        function fecharXanel() {
+            if (!subXanel.closed) {
+                subXanel.close();
+            } else {
+            alert('está pechada!');
+            }
+        }
+
+        document.write(permisoo);
+
+        permisoo.toUpperCase() === 'S' ? abrirXanel() : document.write('Chao');
+    </script>
+    <body>
+        <p><input type="button" onclick="fecharXanel()" value="Fechar" /></p>
+    </body>
+</html>
