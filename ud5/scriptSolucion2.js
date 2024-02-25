@@ -25,10 +25,23 @@ let intentos = 0;
 
 // Execución
 
+divErros.innerHTML = '';
+
 comprobarBlur(nombre, validarTexto);
 comprobarBlur(apellidos, validarTexto);
+comprobarBlur(nombre, validarTexto);
+comprobarBlur(apellidos, validarTexto);
+comprobarBlur(edad, validarIdade);
+comprobarBlur(nif, validarNif);
+comprobarBlur(mail, validarMail);
+comprobarBlur(provincia, validarLista, provincias);
+comprobarBlur(fecha, validarData);
+comprobarBlur(telefono, validarTlfn);
+comprobarBlur(hora, validarHora);
+divErros.innerHTML = '';
 
 formulario.addEventListener('submit', function (e) {
+    divErros.innerHTML = '';
     e.preventDefault();
     const confimar = confirm('De verdade queres enviar?');
 
@@ -36,6 +49,7 @@ formulario.addEventListener('submit', function (e) {
         divErros.innerHTML = '';
         intentos++;
         divIntentos.innerHTML = `Intentos de envío del formulario: ${intentos}`;
+        divErros.innerHTML = '';
         comprobar(nombre, validarTexto);
         comprobar(apellidos, validarTexto);
         comprobar(edad, validarIdade);
@@ -151,23 +165,25 @@ function validarHora(campo) {
 function comprobarBlur(campo, validarCallback, campos) {
     campo.addEventListener('blur', function () {
         if (validarCallback(campo, campos)) {
+            divErros.innerHTML = '';
             campo.value = campo.value.toUpperCase();
-            if (
-                divErros.innerHTML ==
-                    '<p>Produciuse un erro no campo Nombre.</p>' ||
-                divErros.innerHTML ==
-                    '<p>Produciuse un erro no campo Apellidos.</p>'
-            ) {
-                divErros.innerHTML = '';
-            }
         } else {
             campo.focus();
             if (divErros.innerText == '') {
-                divErros.innerHTML =
-                    '<p>Produciuse un erro no campo ' +
-                    campo.id.charAt(0).toUpperCase() +
-                    campo.id.slice(1) +
-                    '.</p>';
+                if (
+                    !divErros.innerHTML.includes(
+                        '<p>Produciuse un erro no campo ' +
+                            campo.id.charAt(0).toUpperCase() +
+                            campo.id.slice(1) +
+                            '.</p>'
+                    )
+                ) {
+                    divErros.innerHTML =
+                        '<p>Produciuse un erro no campo ' +
+                        campo.id.charAt(0).toUpperCase() +
+                        campo.id.slice(1) +
+                        '.</p>';
+                }
             }
         }
     });
@@ -176,13 +192,24 @@ function comprobarBlur(campo, validarCallback, campos) {
 function comprobar(campo, validarCallback, campos) {
     if (validarCallback(campo, campos)) {
         campo.style.backgroundColor = '#FFF';
+        
     } else {
         campo.focus();
         campo.style.backgroundColor = 'rgb(255, 77, 77)';
-        divErros.innerHTML +=
-            '<p>Produciuse un erro no campo ' +
-            campo.id.charAt(0).toUpperCase() +
-            campo.id.slice(1) +
-            '.</p>';
+
+        if (
+            !divErros.innerHTML.includes(
+                '<p>Produciuse un erro no campo ' +
+                    campo.id.charAt(0).toUpperCase() +
+                    campo.id.slice(1) +
+                    '.</p>'
+            )
+        ) {
+            divErros.innerHTML +=
+                '<p>Produciuse un erro no campo ' +
+                campo.id.charAt(0).toUpperCase() +
+                campo.id.slice(1) +
+                '.</p>';
+        }
     }
 }
