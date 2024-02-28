@@ -1,5 +1,7 @@
 // Seleccionamos todos os campos cos que vamos traballar (tentando variar na forma de facelo)
 
+let intentos = 0;
+
 const divErros = document.getElementById('errores');
 const divIntentos = document.getElementById('intentos');
 
@@ -20,8 +22,6 @@ const provincias = formulario.querySelectorAll('#provincia option');
 const fecha = document.querySelector('input[name="fecha"]');
 const telefono = document.getElementById('telefono');
 const hora = document.querySelector('#hora');
-
-let intentos = 0;
 
 // Execución
 
@@ -46,6 +46,7 @@ formulario.addEventListener('submit', function (e) {
     const confimar = confirm('De verdade queres enviar?');
 
     if (confimar) {
+        document.cookie = `intentos=${intentos}`;
         divErros.innerHTML = '';
         intentos++;
         divIntentos.innerHTML = `Intentos de envío del formulario: ${intentos}`;
@@ -192,7 +193,6 @@ function comprobarBlur(campo, validarCallback, campos) {
 function comprobar(campo, validarCallback, campos) {
     if (validarCallback(campo, campos)) {
         campo.style.backgroundColor = '#FFF';
-        
     } else {
         campo.focus();
         campo.style.backgroundColor = 'rgb(255, 77, 77)';

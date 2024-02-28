@@ -21,6 +21,8 @@ const fecha = document.querySelector('input[name="fecha"]');
 const telefono = document.getElementById('telefono');
 const hora = document.querySelector('#hora');
 
+let intentos = 0;
+
 // Execución
 
 divErros.innerHTML = '';
@@ -44,7 +46,6 @@ formulario.addEventListener('submit', function (e) {
     const confimar = confirm('De verdade queres enviar?');
 
     if (confimar) {
-        document.cookie = `intentos=${intentos}`;
         divErros.innerHTML = '';
         intentos++;
         divIntentos.innerHTML = `Intentos de envío del formulario: ${intentos}`;
