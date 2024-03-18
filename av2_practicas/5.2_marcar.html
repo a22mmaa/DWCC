@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Marcar/desmarcar checkbox</title>
+        <script type="text/javascript">
+            const aceptar = () => {
+                document.aceptform.checks.checked = true;
+            };
+            const desmarcar = () => {
+                document.forms[0].elements[0].checked = false;
+            };
+        </script>
+    </head>
+    <body>
+        <form action="5.2_marcar.html" name="aceptform" method="get">
+            <label for="checks">Aceptas?</label>
+            <input type="checkbox" name="checks" id="aceptar" value="aceptar" />
+            
+        </form>
+        <button onclick="aceptar()">Acepto</button>
+        <button onclick="desmarcar()">No acepto</button>
+    </body>
+</html>

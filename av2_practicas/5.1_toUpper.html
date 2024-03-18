@@ -1,0 +1,44 @@
+<!-- OPCION SEN THIS -->
+
+<!--
+<html>
+    <head>
+        <title>To upper</title>
+        <script type="text/javascript">
+            const convertirMaius = () => {
+                document.getElementById('textoconvertir').value = document.getElementById('textoconvertir').value.toUpperCase();
+            }
+        </script>
+    </head>
+    <body>
+        <form id="formulario" action="5.1_toUpper.html">
+            <label for="textoconvertir">Texto:</label>
+            <input type="text" id="textoconvertir" name="textoconvertir" onblur="convertirMaius()">
+        </form>
+    </body>
+</html>
+-->
+
+<!-- OPCION CON THIS -->
+
+<html>
+    <head>
+        <title>To upper con THIS</title>
+        <script type="text/javascript">
+            const convertirMaius = (texto) => {
+                texto.value = texto.value.toUpperCase();
+            };
+        </script>
+    </head>
+    <body>
+        <form id="formulario" action="5.1_toUpper.html">
+            <label for="textoconvertir">Texto:</label>
+            <input
+                type="text"
+                id="textoconvertir"
+                name="textoconvertir"
+                onblur="convertirMaius(this)"
+            />
+        </form>
+    </body>
+</html>

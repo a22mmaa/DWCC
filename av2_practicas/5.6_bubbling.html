@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Burbujeo y captura</title>
+        <style text="css">
+            div {
+                padding: 3em;
+                padding-top: 1em;
+                text-align: center;
+                vertical-align: middle;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="background-color: rgb(195, 255, 195)">
+            <p id="p1">Arriba</p>
+            <div style="background-color: rgb(253, 192, 255)">
+                <p id="p2">Centro</p>
+                <div style="background-color: rgb(193, 233, 245)">
+                    <p id="p3">Abaixo</p>
+                </div>
+            </div>
+        </div>
+
+        <script text="javascript">
+            function funcion(obj) {
+                console.log(`olis, ${obj.className}`);
+            }
+
+            let p2 = document.querySelector('#p3');
+            let p3 = document.querySelector('#p3');
+
+            document
+                .querySelector('#p1')
+                .addEventListener('click', funcion, false);
+            p2.addEventListener('click', funcion, false);
+            p3.addEventListener(
+                'click',
+                function () {
+                    console.log(`olis, ${this.className}`);
+                },
+                false
+            );
+        </script>
+    </body>
+</html>

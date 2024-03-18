@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Validar DNI</title>
+    </head>
+    <body>
+        <form name="formdni">
+            <label for="dni">DNI</label>
+            <input type="text" name="dni" id="dni" />
+            <input type="submit" onclick="revisar()" return false />
+        </form>
+        <script>
+            let dni = document.forms[0].elements[0];
+            const revisar = () => {
+                this.event.preventDefault();
+                if (dni.value.toLowerCase().match(/^\d{8}\w{1}$/)) {
+                    alert('Todo ok');
+                } else {
+                    alert('Mal');
+                }
+            };
+        </script>
+    </body>
+</html>

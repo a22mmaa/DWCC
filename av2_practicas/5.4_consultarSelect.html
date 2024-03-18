@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <title>Consultar seleccion Select</title>
+        <script text="text/javascript">
+            const consultar = () => {
+                let seleccionado =
+                    document.formSelect.provincias[provincias.selectedIndex];
+                alert(
+                    `Seleccionaches ${seleccionado.text} (${seleccionado.value})`
+                );
+            };
+        </script>
+    </head>
+    <body>
+        <form name="formSelect" id="formSelect">
+            <select id="provincias">
+                <option value="1">Un</option>
+                <option value="2">Dois</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <input
+                type="button"
+                value="Consultar seleccion"
+                onclick="consultar()"
+            />
+        </form>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Xestión eventos e formularios</title>
+        <style type="text/css">
+            input,
+            select {
+                display: block;
+                margin-bottom: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="xestionjs">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" />
+
+            <label for="apelidos">Apelidos</label>
+            <input type="text" name="apelidos" id="apelidos" />
+
+            <label for="idade">Idade</label>
+            <input type="number" name="idade" id="idade" />
+
+            <label for="nif">NIF</label>
+            <input type="text" name="nif" id="nif" />
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+
+            <label for="provincias">Provincias</label>
+            <select name="provincias" id="provincias">
+                <option name="provincia" value="C">Corunha</option>
+                <option name="provincia" value="L">Lugo</option>
+                <option name="provincia" value="P">Pontevedra</option>
+                <option name="provincia" value="O">Ourense</option>
+            </select>
+
+            <label for="data">Data</label>
+            <input type="date" name="data" id="data" />
+
+            <label for="telefono">Teléfono</label>
+            <input type="number" name="telefono" id="telefono" />
+
+            <label for="hora">Hora</label>
+            <input type="datetime" name="hora" id="hora" />
+
+            <input type="submit" name="submit" return false />
+        </form>
+        <div id="intentos"></div>
+        <div id="erros"></div>
+
+        <script type="text/javascript" src="varios.js" />
+    </body>
+</html>

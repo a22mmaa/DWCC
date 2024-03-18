@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Consultar radio marcado</title>
+    </head>
+    <body>
+        <form
+            action="5.3_consultarRadio.html"
+            name="formularioActores"
+            method="get"
+            id="formularioActores"
+        >
+            <label for="actor1">Actor 1 Willis</label>
+            <input type="radio" name="actores" id="actor1" value="Willis" />
+            <label for="actor2">Actor 2 Tosar</label>
+            <input type="radio" name="actores" id="actor2" value="Tosar" />
+            <label for="actor3">Actor 3 Aniston</label>
+            <input type="radio" name="actores" id="actor3" value="Aniston" />
+            <label for="actor4">Actor 4 Lawrence</label>
+            <input type="radio" name="actores" id="actor4" value="Lawrence" />
+            <label for="consulta">Consulta:</label>
+            <p>
+                <input
+                    name="consulta"
+                    type="button"
+                    id="consulta"
+                    onclick="marcadoConsulta()"
+                    value="Consulta1"
+                />
+            </p>
+        </form>
+        <button onclick="consultarMarcado()">Consulta2</button>
+        <script type="text/javascript">
+            const marcadoConsulta = () => {
+                let actoresArray1 = document.formularioActores.actores;
+                let algunoMarcado = false;
+                for (let actor of actoresArray1) {
+                    if (actor.checked) {
+                        algunoMarcado = true;
+                        alert(`Seleccionaste ${actor.value}`);
+                    }
+                }
+                if (!algunoMarcado) {
+                    alert(`Non seleccionaches ningún!`);
+                }
+            };
+
+            const consultarMarcado = () => {
+                let actoresArray2 =
+                    document.getElementById('formularioActores').actores;
+
+                for (let i = 0; i < actoresArray2.length; i++) {
+                    if (actoresArray2[i].checked)
+                        alert(`Seleccionaste ${actoresArray2[i].value}`);
+                }
+            };
+        </script>
+    </body>
+</html>

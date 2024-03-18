@@ -1,0 +1,49 @@
+<!-- OPCIÓN SEN THIS -->
+
+<!--<html>
+    <head>
+        <title>Validar form con telefono</title>
+    </head>
+    <body>
+        <form name="formtelefono">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome"/>
+            <label for="telefono">Telefono</label>
+            <input type="number" name="telefono" id="telefono"/>
+        </form>
+        <script text="text/javascript">
+            const telefono = document.forms[0].elements[1];
+            const validarTelefono = () => {
+                if (!telefono.value.match(/^\d{9}$/)) {
+                    alert(`Este teléfono (${telefono.value}) está mal`)
+                }
+            }
+            telefono.addEventListener('blur', validarTelefono, false);
+        </script>
+    </body>
+</html>-->
+
+<!-- OPCIÓN CON THIS -->
+
+<html>
+    <head>
+        <title>Validar form con telefono</title>
+    </head>
+    <body>
+        <form name="formtelefono">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome"/>
+            <label for="telefono">Telefono</label>
+            <input type="number" name="telefono" id="telefono"/>
+        </form>
+        <script text="text/javascript">
+            const telefono = document.forms[0].elements[1];
+            function validarTelefono() {
+                if (!this.value.match(/^\d{9}$/)) {
+                    alert(`Este teléfono (${this.value}) está mal`)
+                }
+            }
+            telefono.addEventListener('blur', validarTelefono, false);
+        </script>
+    </body>
+</html>

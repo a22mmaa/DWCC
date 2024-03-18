@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Validar form simple</title>
+    </head>
+    <body>
+        <form action="5.7_validarForm.html" method="get">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" />
+            <label for="idade">Idade</label>
+            <input type="number" name="idade" id="idade" />
+            <input type="submit" name="enviar" />
+        </form>
+
+        <script type="text/javascript">
+            const idade = document.getElementById('idade');
+            function checkIdade() {
+                if (this.value < 18) {
+                    alert('Meu...');
+                } else {
+                    alert('Dale');
+                }
+            }
+            idade.addEventListener('blur', checkIdade, false);
+        </script>
+    </body>
+</html>
